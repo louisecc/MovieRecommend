@@ -31,11 +31,12 @@ public class Recommend {
         path.put("6thInput", path.get("5thOutput"));
         path.put("6thOutput", path.get("1stInput") + "/6th");
 
-        Step1.run(path);
-        Step2.run(path);
-        Step3.run1(path);
-        Step3.run2(path);
-        Step4.run(path);
+        UserMovieAggregation.run(path);
+        MovieMovieAggregation.run(path);
+        MatrixMultiply.run1(path);
+        MatrixMultiply.run2(path);
+        FinalResult_1.run(path);
+        FinalResult_2.run(path);
         System.exit(0);
     }
 
