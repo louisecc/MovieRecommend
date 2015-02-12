@@ -19,7 +19,7 @@ import org.apache.hadoop.mapred.TextInputFormat;
 import org.apache.hadoop.mapred.TextOutputFormat;
 import myhadoop.HdfsDAO;
 
-public class MatrixMultiply {
+public class MatrixMerge {
 
     public static class MMMapper extends MapReduceBase implements Mapper<LongWritable, Text, IntWritable, Text> {
         private final static IntWritable k = new IntWritable();
