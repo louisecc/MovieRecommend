@@ -30,10 +30,10 @@ public class CourseCourseAggregation{
         public void map(LongWritable key, Text values, OutputCollector<Text, IntWritable> output, Reporter reporter) throws IOException {
             String[] tokens = Recommend.DELIMITER.split(values.toString());
             for (int i = 1; i < tokens.length; i++) {
-                String courseID = tokens[i].split(":")[0];
+                String movieID = tokens[i].split(":")[0];
                 for (int j = 1; j < tokens.length; j++) {
-                    String courseID2 = tokens[j].split(":")[0];
-                    k.set(courseID + ":" + courseID2);
+                    String movieID2 = tokens[j].split(":")[0];
+                    k.set(movieID + ":" + movieID2);
                     output.collect(k, v);
                 }
             }
