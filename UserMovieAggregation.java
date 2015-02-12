@@ -21,9 +21,9 @@ import org.apache.hadoop.mapred.TextInputFormat;
 import org.apache.hadoop.mapred.TextOutputFormat;
 import myhadoop.HdfsDAO;
 
-public class Step1 {
+public class UserMovieAggregation {
 
-    public static class Step1_ToItemPreMapper extends MapReduceBase implements Mapper<Object, Text, IntWritable, Text> {
+    public static class ToItemPreMapper extends MapReduceBase implements Mapper<Object, Text, IntWritable, Text> {
         private final static IntWritable k = new IntWritable();
         private final static Text v = new Text();
 
@@ -39,7 +39,7 @@ public class Step1 {
         }
     }
 
-    public static class Step1_ToUserVectorReducer extends MapReduceBase implements Reducer<IntWritable, Text, IntWritable, Text> {
+    public static class ToUserVectorReducer extends MapReduceBase implements Reducer<IntWritable, Text, IntWritable, Text> {
         private final static Text v = new Text();
 
         @Override
