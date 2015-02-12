@@ -21,8 +21,8 @@ import org.apache.hadoop.mapred.TextInputFormat;
 import org.apache.hadoop.mapred.TextOutputFormat;
 import myhadoop.HdfsDAO;
 
-public class CourseCourseAggregation{
-    public static class CourseCooccurenceMapper extends MapReduceBase implements Mapper<LongWritable, Text, Text, IntWritable> {
+public class MovieMovieAggregation{
+    public static class MovieCooccurenceMapper extends MapReduceBase implements Mapper<LongWritable, Text, Text, IntWritable> {
         private final static Text k = new Text();
         private final static IntWritable v = new IntWritable(1);
 
@@ -40,7 +40,7 @@ public class CourseCourseAggregation{
         }
     }
 
-    public static class CourseCooccurenceReducer extends MapReduceBase implements Reducer<Text, IntWritable, Text, IntWritable> {
+    public static class MovieCooccurenceReducer extends MapReduceBase implements Reducer<Text, IntWritable, Text, IntWritable> {
         private IntWritable result = new IntWritable();
 
         @Override
@@ -66,9 +66,9 @@ public class CourseCourseAggregation{
         conf.setOutputKeyClass(Text.class);
         conf.setOutputValueClass(IntWritable.class);
 
-        conf.setMapperClass(CourseCooccurenceMapper.class);
-        conf.setCombinerClass(CourseCooccurenceReducer.class);
-        conf.setReducerClass(CourseCooccurenceReducer.class);
+        conf.setMapperClass(MovieCooccurenceMapper.class);
+        conf.setCombinerClass(MovieCooccurenceReducer.class);
+        conf.setReducerClass(MovieCooccurenceReducer.class);
 
         conf.setInputFormat(TextInputFormat.class);
         conf.setOutputFormat(TextOutputFormat.class);
