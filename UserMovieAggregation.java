@@ -70,9 +70,9 @@ public class UserMovieAggregation {
         conf.setOutputKeyClass(IntWritable.class);
         conf.setOutputValueClass(Text.class);
 
-        conf.setMapperClass(Step1_ToItemPreMapper.class);
-        conf.setCombinerClass(Step1_ToUserVectorReducer.class);
-        conf.setReducerClass(Step1_ToUserVectorReducer.class);
+        conf.setMapperClass(ToItemPreMapper.class);
+        conf.setCombinerClass(ToUserVectorReducer.class);
+        conf.setReducerClass(ToUserVectorReducer.class);
 
         conf.setInputFormat(TextInputFormat.class);
         conf.setOutputFormat(TextOutputFormat.class);
