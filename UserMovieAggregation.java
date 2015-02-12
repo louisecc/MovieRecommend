@@ -31,10 +31,10 @@ public class UserMovieAggregation {
         public void map(Object key, Text value, OutputCollector<IntWritable, Text> output, Reporter reporter) throws IOException {
             String[] tokens = Recommend.DELIMITER.split(value.toString());
             int userID = Integer.parseInt(tokens[0]);
-            String itemID = tokens[1];
+            String movieID = tokens[1];
             String pref = tokens[2];
             k.set(userID);
-            v.set(itemID + ":" + pref);
+            v.set(movieID + ":" + pref);
             output.collect(k, v);
         }
     }
